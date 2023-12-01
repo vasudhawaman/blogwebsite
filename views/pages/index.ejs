@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<% allblog.forEach(function (list) { %>
+ 
+  <div class="card" style="width: 15rem;">
+    <div class="card-body">
+      <h5 class="card-title" id="titlename"><%=list.title %></h5>
+      <p class="card-text" ><%=list.content %></p>
+      <a href="" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" id="deletelink">Delete</a>
+      
+    </div>
+  </div>
+  
+   <!-- note you defined the field as Name not name -->
+<% }) %> <!-- WORKEDDD-->
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+<script src="public/temp.js"></script>
+</body>
+</html> 

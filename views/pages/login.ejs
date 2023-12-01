@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <%- include('../partials/head'); %>  
+</head>
+<body>
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+    <form action="/create" method="POST">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">UserName</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="UserName" name="username">
+            
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password" name="password">
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3">Login</button>
+          </div>
+          
+          </form>
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+  <%- include('../partials/header'); %>
+</header>
+
+<% allblog.forEach(function (list) { %>
+ <% let listname = String(list.title); %>
+  <div class="card" style="width: 15rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%=list.title %></h5>
+      <p class="card-text"><%=list.content %></p>
+      <button onclick="Delete(listname)" class="btn btn-primary">Delete</button>
+    </div>
+  </div>
+  
+   <!-- note you defined the field as Name not name -->
+<% }) %> <!-- WORKEDDD-->
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+<script src="../public/temp.js"></script>
+</body>
+</html> 
