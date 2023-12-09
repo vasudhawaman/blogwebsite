@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <%- include('../partials/head'); %>
+  
 </head>
 <body class="container">
 
@@ -10,13 +11,23 @@
 </header>
 
 <% allblog.forEach(function (list) { %>
- 
+   
   <div class="card" style="width: 15rem;">
     <div class="card-body">
       <h5 class="card-title" id="titlename"><%=list.title %></h5>
       <p class="card-text" ><%=list.content %></p>
-      <a href="" class="link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" id="deletelink">Delete</a>
-      
+      <dialog id="update">
+         <form action="/update?username=<%=list.title %>" method="POST">
+          <label for="exampleFormControlInput1" class="form-label">Update</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="New Content" name="upd">
+            <button type="submit" onclick="update.close()">Update</button>
+         </form>
+      </dialog>
+      <form action="/delete?username=<%=list.title %>" method="POST">
+        
+        <input type="submit" class="btn btn-primary" placeholder="Delete"> 
+      </form>
+      <button type="button" class="btn-primary" aria-label="Close" onclick="update.showModal()">Update</button>
     </div>
   </div>
   
@@ -26,6 +37,6 @@
 <footer>
   <%- include('../partials/footer'); %>
 </footer>
-<script src="public/temp.js"></script>
+<script src=""></script>
 </body>
 </html> 

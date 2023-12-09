@@ -13,7 +13,7 @@ db.on('error',console.error.bind(console,'connection error!!'));
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
-app.set('/public',express.static('public'));
+app.use('/public',express.static('/public'));
 app.use(express.urlencoded({ extended:false}) );
  //public as static files access
 app.use(require("./routes/route")); //acess all routess
@@ -22,22 +22,7 @@ app.use(require("./models/log"));
 app.use(express.json());
 
 
-app.post('/login',  (req, res)=> {
 
-
-    const Body = req.body;
-      const username = Body.username;
-      const password = Body.password;
-      let newLogin = new Login({
-         username:String(username),
-         password:String(password)
-      });
-      let validID =String(username).length;
-      let validpass =String(username).length;
-      
-    
-  
-});
 
 
 

@@ -71,11 +71,20 @@ else{
 });
 router.post('/delete',async (req,res)=>{
  const user = req.query.username;
- console.log(user);
+ 
 const foundit  = await List.findOneAndDelete({title: user});
 
     res.redirect('/');
   
 });
+router.post('/update',async (req,res)=>{
+  const user = req.query.username;
+  const body = req.body.upd;
+  
+ const foundit  = await List.updateOne({title: user},{$set:{ content : body}});
+ 
+     res.redirect('/');
+   
+ });
 
 module.exports = router ;
